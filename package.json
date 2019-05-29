@@ -1,0 +1,29 @@
+{
+  "name": "tradeshift-test",
+  "version": "1.0.0",
+  "description": "Tradeshift test",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "build": "webpack"
+  },
+  "keywords": [
+    "tradeshift",
+    "triangle"
+  ],
+  "author": "Richard Fernandez",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^8.1.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.8.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
