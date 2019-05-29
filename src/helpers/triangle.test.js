@@ -5,6 +5,13 @@ const {
 
 describe('isValidTriangle', () => {
 	
+	test('should return true if 10, 10 and 10', () => {
+
+		expect(isValidTriangle(10, 10, 10)).toEqual(true)
+
+	})
+
+
 	test('should return true if 4, 3 and 5', () => {
 
 		expect(isValidTriangle(4, 3, 5)).toEqual(true)
@@ -13,9 +20,12 @@ describe('isValidTriangle', () => {
 
 	})
 
-	test('should return false if a = 2, b = 3 and c = 4', () => {
+	test('should return true if a = 2, b = 3 and c = 4', () => {
 
-		expect(isValidTriangle(2, 3, 4)).toEqual(false)
+		// 2+3 > 4
+		// 2+4 > 3
+		// 3+4 > 2
+		expect(isValidTriangle(2, 3, 4)).toEqual(true)
 
 	})
 
@@ -38,9 +48,9 @@ describe('isValidTriangle', () => {
 		)).toEqual(true)
 	})
 
-	test('should inputs are strings but pure numbers', () => {
+	test('should return false are strings but pure numbers', () => {
 
-		expect(isValidTriangle('4', '3', '5')).toEqual(true)
+		expect(isValidTriangle('4', '3', '5')).toEqual(false)
 
 	})
 

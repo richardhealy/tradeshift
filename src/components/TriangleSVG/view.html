@@ -1,6 +1,27 @@
+{% if type === 'isosceles' %}
 <div class="triangle-container">
-  <svg height="250" width="250">
+  <svg height="210" width="250">
     <polygon points="125,30 50,200 200,200" class="triangle" />
     Sorry, your browser does not support inline SVG.
   </svg>
+  <h2>Isosceles</h2>
 </div>
+{% endif %}
+{% if type === 'equilateral' %}
+<div class="triangle-container">
+  <svg height="175" width="250">
+    <polygon points="127 35, 205 160, 50 160" class="triangle" />
+    Sorry, your browser does not support inline SVG.
+  </svg>
+  <h2>Equilateral</h2>
+</div>
+{% endif %}
+{% if type === 'scalene' %}
+<div class="triangle-container">
+  <svg height="125" width="250">
+    <polygon points="60,30 210,30 156,102" class="triangle" />
+    Sorry, your browser does not support inline SVG.
+  </svg>
+  <h2>Scalene</h2>
+</div>
+{% endif %}

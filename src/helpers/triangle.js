@@ -10,20 +10,8 @@ const isValidTriangle = (a, b, c) => {
 		return false
 	}
 
-	// get the longest side
-	const [newA, newB, newC] = [a,b,c].sort((a,b) => a - b)
 
-	const aSquared = newA*newA
-	const bSquared = newB*newB
-	const cSquared = newC*newC
-
-	// Due to floats being IEEE 64 bit values, Javascript has 
-	// floating rounding issues. For use to compare floats,
-	// we have to round the comparisons
-	const compareLeft = (aSquared + bSquared).toFixed(0)
-	const compareRight = cSquared.toFixed(0)
-
-	return (compareLeft === compareRight) ? true : false
+	return ((a + b > c) && (a + c > b) && (b + c > a))
 
 }
 

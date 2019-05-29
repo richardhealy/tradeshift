@@ -1,12 +1,23 @@
+import state from './state'
+
 import Controls from './components/Controls'
 import TriangleSVG from './components/TriangleSVG'
 
-document.addEventListener('DOMContentLoaded', () => {
+const render = () => {
 
-  const controlsEl = document.getElementById('controls')
-  const controls = new Controls(controlsEl)
+	const stateInstance = state.getInstance(this)
+
+	const controlsEl = document.getElementById('controls')
+  const controls = new Controls(stateInstance, controlsEl)
 
   const triangleSvgEl = document.getElementById('triangle-svg')
-  const triangle = new TriangleSVG(triangleSvgEl)
+  const triangle = new TriangleSVG(stateInstance, triangleSvgEl)
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+	const appState = state.getInstance(render)
+
+	render()
 
 })

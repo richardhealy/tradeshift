@@ -2,10 +2,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 }
 
-.triangle{
+.triangle-container h2 {
+	text-align: center;
+}
+
+.triangle {
+	padding:24px;
   fill: transparent;
   stroke: black;
   stroke-width: 8;

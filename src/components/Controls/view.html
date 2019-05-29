@@ -2,24 +2,46 @@
 	<div data-ts="Panel">
 		<form data-ts="Form">
 			<fieldset>
-				<label>
-					<span>Side A</span>
-					<input type="number" required/>
+				<label {% if errorA %}class="ts-error"{% endif %}>
+					<span>Side A:</span>
+					<input id="sideA" type="number" value="{{valueA}}" required/>
 				</label>
+				{% if errorA %}
+				<dl class="ts-errors">
+					<dt>Enter a number above</dt>
+				</dl>
+				{% endif %}
 			</fieldset>
 			<fieldset>
-				<label>
+				<label {% if errorB %}class="ts-error"{% endif %}>
 					<span>Side B</span>
-					<input type="number" required/>
+					<input id="sideB" type="number" value="{{valueA}}" required/>
 				</label>
+				{% if errorB %}
+				<dl class="ts-errors">
+					<dt>Enter a number above</dt>
+				</dl>
+				{% endif %}
 			</fieldset>
 			<fieldset>
-				<label>
+				<label {% if errorC %}class="ts-error"{% endif %}>
 					<span>Side C</span>
-					<input type="number" required/>
+					<input id="sideC" type="number" value="{{valueA}}" required/>
 				</label>
+				{% if errorC %}
+				<dl class="ts-errors">
+					<dt>Enter a number above</dt>
+				</dl>
+				{% endif %}
 			</fieldset>
-			<button data-ts="Button" class="ts-primary">
+			{% if mainError %}
+			<div>
+				<dl class="ts-errors">
+					<dt>Not a valid triangle</dt>
+				</dl>
+			</div>
+			{% endif %}
+			<button id="submit" data-ts="Button" class="ts-primary">
 				<span>Get Type</span>
 			</button>
 		</form>

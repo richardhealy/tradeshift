@@ -3,28 +3,36 @@ import view from './view.html'
 
 class TriangleSVG {
 
-	constructor(el) {
-		this.render(el)	
+	constructor(state, parentEl) {
+
+		this.parentEl = parentEl
+		this.state = state
+		this.render()
 	}
 
-	render(el) {
-
-		if(!el) {
-			console.warn('TriangleSVG element not ready to render')
-		}
-
-		el.innerHTML = nj.compile(view).render()	
-		this.attach(el)
-	}
-
-	attach(el) {
-		
-		if(!el) {
-			console.warn('TriangleSVG element not ready to render')
+	render() {
+		if(!this.parentEl) {
+			console.error('Controls element not ready to render')
 			return false
 		}
 
-		console.log(el)
+		const {
+			triangleType
+		} = this.state.getState()
+
+		this.parentEl.innerHTML = nj.compile(view).render({
+			type:triangleType
+		})	
+		this.attach()
+	}
+
+	attach() {
+
+		if(!this.parentEl) {
+			console.warn('Controls element not ready to attach')
+			return false
+		}
+
 	}
 	
 }
