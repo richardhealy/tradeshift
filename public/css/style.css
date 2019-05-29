@@ -1,0 +1,13 @@
+.panel-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.triangle{
+  fill: transparent;
+  stroke: black;
+  stroke-width: 8;
+  transition: all 0.8s ease-in-out;
+}

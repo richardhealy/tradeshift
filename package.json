@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "build": "webpack"
+    "build": "webpack --watch",
+    "test": "jest --watch"
   },
   "keywords": [
     "tradeshift",
@@ -16,7 +17,10 @@
   "dependencies": {
     "bignumber.js": "^8.1.1",
     "express": "^4.17.1",
-    "nodemon": "^1.19.1"
+    "html-loader": "^0.5.5",
+    "nodemon": "^1.19.1",
+    "nunjucks": "^3.2.0",
+    "validator": "^11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

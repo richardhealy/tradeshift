@@ -1,13 +1,12 @@
-import AlertBox from './AlertBox/AlertBox'
-
-const alertUser = new AlertBox();
+import Controls from './components/Controls'
+import TriangleSVG from './components/TriangleSVG'
 
 document.addEventListener('DOMContentLoaded', () => {
-  
-	console.log('TEST')
 
-  const alertButton = document.getElementById('js-button');
-  alertButton.addEventListener('click', alertUser.sayHi);
-  
-  const pTagButton = document.getElementById('js-write-text-button');
-});
+  const controlsEl = document.getElementById('controls')
+  const controls = new Controls(controlsEl)
+
+  const triangleSvgEl = document.getElementById('triangle-svg')
+  const triangle = new TriangleSVG(triangleSvgEl)
+
+})

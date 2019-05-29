@@ -1,26 +1,60 @@
-const BigNumber = require('bignumber.js').default;
-
 const isValidTriangle = (a, b, c) => {
 
-	const aSquared = new BigNumber(a).exponentiatedBy(2)
-	const bSquared = new BigNumber(b).exponentiatedBy(2)
-	const cSquared = new BigNumber(c).exponentiatedBy(2)
+	if(
+		isNaN(a) ||
+		isNaN(b) ||
+		isNaN(c)
+	) {
+		// Depending on requirements we could return
+		// false, warning or throw error
+		return false
+	}
 
-	return aSquared.plus(bSquared).isEqualTo(cSquared) ? true : false
+	// get the longest side
+	const [newA, newB, newC] = [a,b,c].sort((a,b) => a - b)
+
+	const aSquared = newA*newA
+	const bSquared = newB*newB
+	const cSquared = newC*newC
+
+	// Due to floats being IEEE 64 bit values, Javascript has 
+	// floating rounding issues. For use to compare floats,
+	// we have to round the comparisons
+	const compareLeft = (aSquared + bSquared).toFixed(0)
+	const compareRight = cSquared.toFixed(0)
+
+	return (compareLeft === compareRight) ? true : false
 
 }
 
-const getTriangleType = (a, b, c) => {
+const getTriangleType = (a, b, c, atLeastTwo) => {
 
-	let type = 'isosceles'
+	if(
+		isNaN(a) ||
+		isNaN(b) ||
+		isNaN(c)
+	) {
+		// Depending on requirements we could return
+		// false, warning or throw error
+		return false
+	}
 
-	if(a === b && b === c) {
+	let type = 'scalene'
+
+	const ab = a === b
+	const bc = b === c
+	const ca = c === a
+
+	// All sides equal
+	if (ab && bc && ca) {
 
 		type = 'equilateral'
 
-	} else if (a === b || b === c || c === a) {
+	// Two sides side equal
+	} else if(ab || bc || ca) {
 
 		type = 'isosceles'
+
 	}
 
 	return type

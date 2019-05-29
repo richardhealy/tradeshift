@@ -1,10 +1,7 @@
-{
+module.exports = {
 	"presets": [
     ["@babel/env", {
       "modules": false
     }]
-  ],
-  "ignore": [
-    "**/*.test.js"
   ]
 }
