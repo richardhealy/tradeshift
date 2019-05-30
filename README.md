@@ -1,6 +1,6 @@
 #Triangle Test
 
-For Tradeshift
+For Tradeshift. Demo: https://tradeshift-4d427.firebaseapp.com/
 
 ###Installation instructions
 
