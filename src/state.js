@@ -7,7 +7,7 @@ const state = (() => {
 	// We could send this from a different
 	// location, for simplicity, set it here
 	let _state = {
-		triangleType:'scalene'
+		triangleType:'none'
 	}
 
 	const _getState = () => {

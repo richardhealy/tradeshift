@@ -1,3 +1,15 @@
+/**
+ * Function to check if triangle is valid.
+ *
+ * @param {number} a - side A number
+ * @param {number} b - side B number
+ * @param {number} c - side C number
+ * @return {boolean} true / false if valid
+ *
+ * @example
+ *
+ * isValidTriangle(3,4,5)
+ */
 const isValidTriangle = (a, b, c) => {
 
 	if(
@@ -15,7 +27,19 @@ const isValidTriangle = (a, b, c) => {
 
 }
 
-const getTriangleType = (a, b, c, atLeastTwo) => {
+/**
+ * Function to get triangle type.
+ *
+ * @param {number} a - side A number
+ * @param {number} b - side B number
+ * @param {number} c - side C number
+ * @return {string} type of triangle scalene|equilateral|isosceles
+ *
+ * @example
+ *
+ * getTriangleType(3,4,5)
+ */
+const getTriangleType = (a, b, c) => {
 
 	if(
 		isNaN(a) ||
