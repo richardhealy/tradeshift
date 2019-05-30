@@ -2,7 +2,7 @@
 
 For Tradeshift. Demo: https://tradeshift-4d427.firebaseapp.com/
 
-###Installation instructions
+##Installation instructions
 
 ```
 git clone https://github.com/richardhealy/tradeshift.git 
@@ -13,13 +13,13 @@ yarn start
 
 Then visit `http://localhost:5000`
 
-###To build 
+##To build 
 
 ```
 yarn build
 ```
 
-###To run tests
+##To run tests
 
 ```
 yarn test
